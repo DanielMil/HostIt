@@ -1,3 +1,24 @@
+//Database connection code
+let mongo = require("mongodb").MongoClient; 
+var uri = "mongodb+srv://danielmil:<PASSWORD>@cluster0-986ej.mongodb.net/test?";
+
+let item = {
+    "username": "daniel",
+    "password": "hello123"
+};
+
+btnInsertDatabase.addEventListener("click", e => {
+    mongo.connect(uri, function(err, client) {
+        const collection = client.db("hostit").collection("Users");
+        client.collection("Users").insertOne(item, function (err, result) {
+            if (!err) {
+                console.log("Item inserted");
+            }
+            client.close();
+        });
+    });
+});
+    
 document.addEventListener("DOMContentLoaded", event => {
     const app = firebase.app();
 });
