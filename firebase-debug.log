@@ -1,0 +1,48 @@
+[debug] [2018-07-09T19:34:16.115Z] ----------------------------------------------------------------------
+[debug] [2018-07-09T19:34:16.117Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Daniel\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-07-09T19:34:16.117Z] CLI Version:   3.19.3
+[debug] [2018-07-09T19:34:16.117Z] Platform:      win32
+[debug] [2018-07-09T19:34:16.117Z] Node Version:  v10.6.0
+[debug] [2018-07-09T19:34:16.118Z] Time:          Mon Jul 09 2018 15:34:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-09T19:34:16.118Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-09T19:34:16.125Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-09T19:34:16.125Z] > authorizing via signed-in user
+[debug] [2018-07-09T19:34:16.127Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hostit-62fc8  
+  
+ Mon Jul 09 2018 15:34:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-09T19:34:16.807Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-09T19:34:16.808Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hostit-62fc8/tokens  
+  
+ Mon Jul 09 2018 15:34:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-09T19:34:17.253Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-09T19:34:17.254Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hostit-62fc8  
+  
+ Mon Jul 09 2018 15:34:17 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-09T19:34:17.653Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Daniel\Desktop\HostIt'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-07-09T19:34:18.177Z] Fetching environment
+[debug] [2018-07-09T19:34:18.179Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/870062932336:getServerAppConfig  
+  
+ Mon Jul 09 2018 15:34:18 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-09T19:34:18.179Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/870062932336/clients/_:getWebAppConfig  
+  
+ Mon Jul 09 2018 15:34:18 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-07-09T19:34:18.695Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-09T19:34:18.720Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-09T19:34:18.720Z] Starting @google-cloud/functions-emulator
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-07-09T19:34:20.259Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2018-07-09T19:34:20.325Z] Error during trigger parsing:  Error parsing triggers: Cannot find module 'C:\Users\Daniel\Desktop\HostIt\functions'
+
+Try running "npm install" in your functions directory before deploying.
+[warn] !  functions: Error from emulator. Error parsing triggers: Cannot find module 'C:\Users\Daniel\Desktop\HostIt\functions'
+
+Try running "npm install" in your functions directory before deploying.
+[debug] [2018-07-09T19:34:20.325Z] 
