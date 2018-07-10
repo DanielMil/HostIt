@@ -1,0 +1,24 @@
+{
+  "name": "hostit",
+  "version": "1.0.0",
+  "description": "party hosting service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielMilGuelph/HostIt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielMilGuelph/HostIt/issues"
+  },
+  "homepage": "https://github.com/DanielMilGuelph/HostIt#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongodb": "^3.1.1",
+    "path": "^0.12.7"
+  }
+}
