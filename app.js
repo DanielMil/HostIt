@@ -19,22 +19,32 @@ app.listen(port, function() {
 });
 
 
-// let item = {
-//     "username": "daniel",
-//     "password": "hello123"
-// };
+let item = {
+    "username": "daniel",
+    "password": "hello123"
+};
 
-// btnInsertDatabase.addEventListener("click", e => {
-//     mongo.connect(uri, function(err, client) {
-//         const collection = client.db("hostit").collection("Users");
-//         client.collection("Users").insertOne(item, function (err, result) {
-//             if (!err) {
-//                 console.log("Item inserted");
-//             }
-//             client.close();
-//         });
-//     });
-// });
+app.get('/addToDatabase', function(req, res) {
+    mongo.connect(uri, function(err, client) {
+	   
+		if (err) {
+			throw err;
+		} else {
+			console.log("Connected");
+		}
+		// const collection = client.db("hostit").collection("Users");
+        // client.collection("Users").insertOne(item, function (err, result) {
+        //     if (!err) {
+        //         console.log("Item inserted");
+        //     }
+        //     client.close();
+		// });
+		
+		client.close();
+	});
+	
+	res.send("Success");
+});
     
 // document.addEventListener("DOMContentLoaded", event => {
 //     const app = firebase.app();
