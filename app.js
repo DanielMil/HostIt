@@ -14,16 +14,10 @@ app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-//running server on port#
-var port = process.env.PORT || 8080;
-app.listen(port, function() {
-	console.log("Running app at localhost: "+ port);
-});
-
 
 let item = {
-    "username": "daniel",
-    "password": "hello123"
+    "username": "ryanGundu",
+    "password": "testing123"
 };
 
 app.get('/addToDatabase', function(req, res) {
@@ -42,3 +36,10 @@ app.get('/addToDatabase', function(req, res) {
 	res.send("Success");
 });
     
+
+
+//running server on port#
+var port = process.env.PORT || 8080;
+app.listen(port, function() {
+	console.log("Running app at localhost: "+ port);
+});
