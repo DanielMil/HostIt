@@ -1,10 +1,12 @@
 //Database connection code
 let mongo    = require("mongodb").MongoClient; 
-var uri      = "mongodb+srv://danielmil:PASSWORD@cluster0-986ej.mongodb.net/test?";
+var uri      = process.env.MONGOURI;
 
 var express  = require('express');
 var app      = express();
 var path	 = require('path');
+
+console.log(process.env.MONGOURI);
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
