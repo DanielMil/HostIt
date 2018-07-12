@@ -5,27 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Host It | Welcome</title>
     <link rel="shortcut icon" type="image/png" href="static/cup.png">
-
+    <link rel="stylesheet" href="static/css/logIn.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
   </head>
   <body>
     
-    <div id="loginButtons">
-      <button onclick="loginWithGoogle()">
-        Login With Google
-      </button>
-    </div>
-
-    <input id="txtEmail" type="email" placeholder="Email">
+    <!-- <input id="txtEmail" type="email" placeholder="Email">
     <input id="txtPassword" type="password" placeholder="Password">
-    <button id="btnLogin" class="btn btn-action">Log In</button>
+    <button id="btnLogin" class="btn btn-primary">Log In</button>
     <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
     <button id="btnLogout" class="invisible">Log Out</button>
     
-    <button id="btnInsertDatabase" class="btn btn-action">Insert to Database</button>
+    <button id="btnInsertDatabase" class="btn btn-action">Insert to Database</button> -->
+    <div class="login-form">
+      <div class="form" action="/examples/actions/confirmation.php" method="post">
+          <h2 class="text-center">Sign In</h2>   
+          <div class="form-group">
+            <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                  <input id="txtEmail" type="email" class="form-control" name="email" placeholder="E-mail" required="required">				
+              </div>
+          </div>
+      <div class="form-group">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                  <input id="txtPassword" type="password" class="form-control" name="password" placeholder="Password" required="required">				
+              </div>
+          </div>        
+          <div class="form-group">
+              <button id ="btnLogin" class="btn btn-primary login-btn btn-block">Login</button>
+          </div>
+          <div class="or-seperator"><i>or</i></div>
+          <div class="form-group">
+            <button id="btnSignUp" class="btn btn-primary login-btn btn-block">Sign Up</button>
+          </div>
+          <div class="clearfix">
+              <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+              <a href="#" class="pull-right">Forgot Password?</a>
+          </div>
+          <!-- logIn through google/twitter/facebook -->
 
-    <p id="status"></p>
+          <!-- <div class="or-seperator"><i>or</i></div>
+          <p class="text-center">Login with your social media account</p>
+          <div class="text-center social-btn">
+              <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i>&nbsp; Facebook</a>
+              <a href="#" class="btn btn-info"><i class="fa fa-twitter"></i>&nbsp; Twitter</a>
+              <a href="#" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
+          </div> -->
+        </div>
+      <p class="text-center text-muted small">Having trouble logging in? <a href="#">Contact us!</a></p>
+    </div>
+    <button id="btnLogout" class="invisible">Log Out</button>
+
+
 
     <script src="static/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
