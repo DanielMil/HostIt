@@ -2,6 +2,7 @@
 var config = {
 
 };
+
 firebase.initializeApp(config);
 
 const txtEmail = document.getElementById('txtEmail');
@@ -9,6 +10,7 @@ const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
 const btnLogout = document.getElementById('btnLogout');
+const verification = document.getElementById('verification');
 
 btnLogin.addEventListener('click', e => {
 
@@ -64,13 +66,30 @@ btnLogout.addEventListener('click', e => {
 
 });
 
-firebase.auth().onAuthStateChanged(firebase => {
-    if (firebase) {
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
         console.log("user is logged-in");
+        if (!user.emailVerified) {
+
+            var member = firebase.auth().currentUser;
+
+            member.sendEmailVerification().then(function() {
+                // Email sent.
+                console.log('Email sent to ' + user.email);
+            }).catch(function(error) {
+                // An error happened.
+                console.log('Error: could not send email')
+            });
+
+        }
         btnLogout.classList.remove('invisible');
+        verification.classList.remove('invisible');
+        verification.innerHTML = 'Verified: ' + user.emailVerified;
+        
     } else {
         console.log("Not logged In");
         btnLogout.classList.add('invisible');
+        verification.classList.add('invisible');
     }
 });
 
