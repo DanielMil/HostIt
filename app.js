@@ -6,26 +6,27 @@ var express  = require('express');
 var app      = express();
 var path	 = require('path');
 
-console.log(process.env.MONGOURI);
-
-app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static(path.join(__dirname, '/public')));
 
 app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-
-let item = {
-    "username": "ryanGundu",
-    "password": "testing123"
-};
-
 app.get('/addToDatabase', function(req, res) {
+
+    let userToInsert = {
+        "username": req.query.username,
+        "password": req.query.password,
+        "firstName": req.query.firstName,
+        "lastName": req.query.lastName,
+        "email": req.query.lastName
+    };
+
     mongo.connect(uri, function(err, client) {
         const db = client.db("hostit");
-        db.collection("Users").insertOne(item, function (err, result) {
+        db.collection("Users").insertOne(userToInsert, function (err, result) {
             if (!err) {
-                console.log("Item inserted");
+                console.log("User inserted to database");
             } else {
                 console.log(err);
             }
@@ -36,8 +37,6 @@ app.get('/addToDatabase', function(req, res) {
 	res.send("Success");
 });
     
-
-
 //running server on port#
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
