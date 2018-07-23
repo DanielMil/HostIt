@@ -81,6 +81,8 @@ firebase.auth().onAuthStateChanged(user => {
                 console.log('Error: could not send email')
             });
 
+        } else {
+            // window.location = 'static/home.html';
         }
         btnLogout.classList.remove('invisible');
         verification.classList.remove('invisible');
