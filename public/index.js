@@ -1,6 +1,11 @@
 
 var config = {
-
+    apiKey: "AIzaSyDCpYfH4O8qPpf7F3yUIFwW41AbIZAyt_Y",
+    authDomain: "host-it-d0976.firebaseapp.com",
+    databaseURL: "https://host-it-d0976.firebaseio.com",
+    projectId: "host-it-d0976",
+    storageBucket: "host-it-d0976.appspot.com",
+    messagingSenderId: "293590162456"
 };
 
 firebase.initializeApp(config);

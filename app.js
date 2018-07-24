@@ -6,11 +6,18 @@ var express  = require('express');
 var app      = express();
 var path	 = require('path');
 
+// var admin = require('firebase-admin');
+// admin.initializeApp();
+
 app.use('/static', express.static(path.join(__dirname, '/public')));
 
 app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
+
+// app.get('/logOut', function(req, res) {
+//     res.send("Complete");
+// });
 
 app.get('/addToDatabase', function(req, res) {
 
