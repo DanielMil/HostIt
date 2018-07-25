@@ -1,4 +1,3 @@
-
 var config = {
 
 };
@@ -9,8 +8,8 @@ const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
-const btnLogout = document.getElementById('btnLogout');
-const verification = document.getElementById('verification');
+// const btnLogout = document.getElementById('btnLogout');
+// const verification = document.getElementById('verification');
 
 btnLogin.addEventListener('click', e => {
 
@@ -54,17 +53,17 @@ btnSignUp.addEventListener('click', e => {
 
 });
 
-btnLogout.addEventListener('click', e => {
+// btnLogout.addEventListener('click', e => {
 
-    firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-        console.log("Sign-out successful.");
-        }).catch(function(error) {
-        // An error happened.
-        console.log("Unable to Sign-out: " + error);
-    });
+//     firebase.auth().signOut().then(function() {
+//         // Sign-out successful.
+//         console.log("Sign-out successful.");
+//         }).catch(function(error) {
+//         // An error happened.
+//         console.log("Unable to Sign-out: " + error);
+//     });
 
-});
+// });
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -82,16 +81,16 @@ firebase.auth().onAuthStateChanged(user => {
             });
 
         } else {
-            // window.location = 'static/home.html';
+            window.location = 'static/home.html';
         }
-        btnLogout.classList.remove('invisible');
-        verification.classList.remove('invisible');
-        verification.innerHTML = 'Verified: ' + user.emailVerified;
+        // btnLogout.classList.remove('invisible');
+        // verification.classList.remove('invisible');
+        // verification.innerHTML = 'Verified: ' + user.emailVerified;
         
     } else {
         console.log("Not logged In");
-        btnLogout.classList.add('invisible');
-        verification.classList.add('invisible');
+        // btnLogout.classList.add('invisible');
+        // verification.classList.add('invisible');
     }
 });
 

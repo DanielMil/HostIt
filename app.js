@@ -7,7 +7,11 @@ var app      = express();
 var path	 = require('path');
 
 // var admin = require('firebase-admin');
-// admin.initializeApp();
+// admin.initializeApp({
+//     serviceAccount: __dirname + "./serviceAccountCredentials.json",
+//     databaseURL: "https://host-it-d0976.firebaseio.com"
+// });
+
 
 app.use('/static', express.static(path.join(__dirname, '/public')));
 
