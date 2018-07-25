@@ -19,18 +19,14 @@ app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-// app.get('/logOut', function(req, res) {
-//     res.send("Complete");
-// });
-
 app.get('/addToDatabase', function(req, res) {
 
+    let userValues = JSON.parse(req.query.JSONstring);
+
     let userToInsert = {
-        "username": req.query.username,
-        "password": req.query.password,
-        "firstName": req.query.firstName,
-        "lastName": req.query.lastName,
-        "email": req.query.lastName
+        "firstName": userValues.firstName,
+        "lastName": userValues.lastName,
+        "email": userValues.email
     };
 
     mongo.connect(uri, function(err, client) {
