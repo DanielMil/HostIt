@@ -43,6 +43,14 @@ app.get('/addToDatabase', function(req, res) {
 	
 	res.send("Success");
 });
+
+app.get('/login', (req, res) => {
+    res.sendFile('public/login.html'); 
+});
+
+app.get('/signup', (req, res) => {
+    res.sendFile('public/signup.html'); 
+});
     
 //running server on port#
 var port = process.env.PORT || 8080;

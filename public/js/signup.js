@@ -16,7 +16,6 @@ btnSignUp.addEventListener('click', e => {
         return; 
     }
 
-
     let User = {
         'firsName': firstName,
         'lastName': lastName,
