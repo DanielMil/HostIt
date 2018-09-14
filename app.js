@@ -12,11 +12,10 @@ var path	 = require('path');
 //     databaseURL: "https://host-it-d0976.firebaseio.com"
 // });
 
+app.use('/static', express.static(__dirname + '/public'));
 
-app.use('/static', express.static(path.join(__dirname, '/public')));
-
-app.get('/', function(req, res){
-	res.sendFile(path.join(__dirname + '/public/index.html'));
+app.get('/', function(req, res) {
+	res.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/addToDatabase', function(req, res) {
